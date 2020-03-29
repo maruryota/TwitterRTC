@@ -17,6 +17,12 @@ sys.path.append(".")
 import RTC
 import OpenRTM_aist
 
+from twitter_action.get_timeline import get_timeline
+from twitter_action.post import post
+
+import json, config #標準のjsonモジュールとconfig.pyの読み込み
+from requests_oauthlib import OAuth1Session #OAuthのライブラリの読み込み
+
 
 # Import Service implementation class
 # <rtc-template block="service_impl">
@@ -57,6 +63,8 @@ class twitterRTC(OpenRTM_aist.DataFlowComponentBase):
 	def __init__(self, manager):
 		OpenRTM_aist.DataFlowComponentBase.__init__(self, manager)
 
+		self.url = "https://api.twitter.com/1.1/statuses/update.json"
+
 
 
 		
@@ -78,7 +86,6 @@ class twitterRTC(OpenRTM_aist.DataFlowComponentBase):
 	# 
 	#
 	def onInitialize(self):
-		print("on init")
 		# Bind variables and configuration variable
 		
 		# Set InPort buffers
@@ -144,6 +151,12 @@ class twitterRTC(OpenRTM_aist.DataFlowComponentBase):
 	#
 	#
 	def onActivated(self, ec_id):
+		CK = config.CONSUMER_KEY
+		CS = config.CONSUMER_SECRET
+		AT = config.ACCESS_TOKEN
+		ATS = config.ACCESS_TOKEN_SECRET
+		self.twitter = OAuth1Session(CK, CS, AT, ATS) #認証処理
+		
 	
 		return RTC.RTC_OK
 	
@@ -172,7 +185,22 @@ class twitterRTC(OpenRTM_aist.DataFlowComponentBase):
 	#
 	#
 	def onExecute(self, ec_id):
-		print("called on execute")
+		print("行いたい行動を入力してください。 'post' 'timeline'")
+		action = input()
+
+		if action == "post":
+			print("tweet 内容を入力してください：")
+			tweet = input()
+			post(self.url, self.twitter, tweet)
+
+
+		elif action == "timeline":
+			print("タイムライン取得数を入力してください：")
+			timeline_count = input()
+			get_timeline(self.url, self.twitter, int(timeline_count))
+
+		else:
+			print("行動は 'post' 'timeline'が選択可能です。")
 	
 		return RTC.RTC_OK
 	
