@@ -1,0 +1,13 @@
+2020-03-29 18:36:43,175 file.manager INFO 1.2.0
+2020-03-29 18:36:43,175 file.manager INFO Copyright (C) 2003-2010
+2020-03-29 18:36:43,175 file.manager INFO   Noriaki Ando
+2020-03-29 18:36:43,175 file.manager INFO   Intelligent Systems Research Institute, AIST
+2020-03-29 18:36:43,175 file.manager INFO Manager starting.
+2020-03-29 18:36:43,175 file.manager INFO Starting local logging.
+2020-03-29 18:36:43,191 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2020-03-29 18:36:47,221 file.ManagerServant INFO Master manager not found
+2020-03-29 18:36:47,221 file.LocalServiceAdmin INFO All the local services are enabled.
+2020-03-29 18:36:47,221 file.manager INFO Component type conf file: twitterRTC.conf loaded.
+2020-03-29 18:36:47,237 file.ec_base INFO setRate(1000000.000000) done
+2020-03-29 18:36:47,237 file.ec_base INFO setRate(1000.000000) done
+2020-03-29 18:36:47,237 file.rtobject INFO 1 execution context was created.
