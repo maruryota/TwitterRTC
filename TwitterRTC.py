@@ -190,22 +190,10 @@ class TwitterRTC(OpenRTM_aist.DataFlowComponentBase):
 	#
 	#
 	def onExecute(self, ec_id):
-		print("行いたい行動を入力してください。 'post' 'timeline'")
-		action = input()
-
-		if action == "post":
-			print("tweet 内容を入力してください：")
-			tweet = input()
-			post(self.url, self.twitter, tweet)
-
-
-		elif action == "timeline":
-			print("タイムライン取得数を入力してください：")
-			timeline_count = input()
-			get_timeline(self.url, self.twitter, int(timeline_count))
-
-		else:
-			print("行動は 'post' 'timeline'が選択可能です。")
+		if self._tweetIn.isNew():
+			data = self._tweetIn.read()
+			post(self.url, self.twitter, data.data)
+		
 	
 		return RTC.RTC_OK
 	
