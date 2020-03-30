@@ -1,7 +1,0 @@
-2020-03-29 18:33:39,060 file.manager INFO 1.2.0
-2020-03-29 18:33:39,060 file.manager INFO Copyright (C) 2003-2010
-2020-03-29 18:33:39,060 file.manager INFO   Noriaki Ando
-2020-03-29 18:33:39,060 file.manager INFO   Intelligent Systems Research Institute, AIST
-2020-03-29 18:33:39,060 file.manager INFO Manager starting.
-2020-03-29 18:33:39,060 file.manager INFO Starting local logging.
-2020-03-29 18:33:43,121 file.manager.namingmanager INFO NameServer connection failed: corba/localhost
