@@ -18,7 +18,7 @@ import RTC
 import OpenRTM_aist
 
 from twitter_action.get_timeline import get_timeline
-from twitter_action.post import post
+from twitter_action.post import post_tweet
 
 import json, config #標準のjsonモジュールとconfig.pyの読み込み
 from requests_oauthlib import OAuth1Session #OAuthのライブラリの読み込み
@@ -65,7 +65,11 @@ class twitterRTC(OpenRTM_aist.DataFlowComponentBase):
 
 		self.url = "https://api.twitter.com/1.1/statuses/update.json"
 
-
+		tweet_arg = [None] * int((len(RTC._d_TimedString) - 4) / 2)
+		self._d_tweet = RTC.TimedPose2D(*tweet_arg)
+		"""
+		"""
+		self._tweetIn = OpenRTM_aist.InPort("tweet", self._d_tweet)
 
 		
 
@@ -89,7 +93,8 @@ class twitterRTC(OpenRTM_aist.DataFlowComponentBase):
 		# Bind variables and configuration variable
 		
 		# Set InPort buffers
-		
+		self.addInPort("tweet",self._tweetIn)
+
 		# Set OutPort buffers
 		
 		# Set service provider to Ports
