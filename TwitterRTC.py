@@ -67,7 +67,7 @@ class TwitterRTC(OpenRTM_aist.DataFlowComponentBase):
 		self.url = "https://api.twitter.com/1.1/statuses/update.json"
 
 		tweet_arg = [None] * int((len(RTC._d_TimedString) - 4) / 2)
-		self._d_tweet = RTC.TimedPose2D(*tweet_arg)
+		self._d_tweet = RTC.TimedString(*tweet_arg)
 		"""
 		"""
 		self._tweetIn = OpenRTM_aist.InPort("tweet", self._d_tweet)
