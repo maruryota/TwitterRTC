@@ -157,7 +157,6 @@ class TwitterRTC(OpenRTM_aist.DataFlowComponentBase):
 		AT = config.ACCESS_TOKEN
 		ATS = config.ACCESS_TOKEN_SECRET
 		self.twitter = OAuth1Session(CK, CS, AT, ATS) #認証処理
-		
 	
 		return RTC.RTC_OK
 	
