@@ -1,4 +1,4 @@
-﻿twitterRTC - 日本語
+﻿TwitterRTC - 日本語
 =======================
 
 
@@ -13,9 +13,9 @@
 条件
 ====
 
-twitterRTCはOpenRTM-aist 1.0.0以上のC++版が必要です。
+TwitterRTCはOpenRTM-aist 1.0.0以上のC++版が必要です。
 
-twitterRTCは CMake_ を使います。CMake 2.8以上が必要です。
+TwitterRTCは CMake_ を使います。CMake 2.8以上が必要です。
 
 .. _CMAke:
    http://www.cmake.org
@@ -36,8 +36,8 @@ Windowsのユーザはインストーラパッケージを使用してコンポ�
 - 環境変数の変更を適用するため、コンポーネントを使用する前にコンピューターを
   再起動する必要があるかもしれません。
 
-twitterRTCは ``twitterRTCComp`` の実行をダブルクリックして実行することが
-できます。あるいは、 ``twitterRTC`` を初期化関数の ``twitterRTCInit`` を利用して、
+TwitterRTCは ``TwitterRTCComp`` の実行をダブルクリックして実行することが
+できます。あるいは、 ``TwitterRTC`` を初期化関数の ``TwitterRTCInit`` を利用して、
 マネージャにロードすることができます。
 
 ソースから
@@ -47,11 +47,11 @@ twitterRTCは ``twitterRTCComp`` の実行をダブルクリックして実行�
 
 - ソースをダウンロードして解凍してください::
 
-    tar -xvzf twitterRTC-1.0.0.tar.gz
+    tar -xvzf TwitterRTC-1.0.0.tar.gz
 
 - 解凍されたフォルダに入ってください::
 
-    cd twitterRTC-1.0.0
+    cd TwitterRTC-1.0.0
 
 - ``build`` フォルダを作ってください::
 
@@ -82,9 +82,9 @@ twitterRTCは ``twitterRTCComp`` の実行をダブルクリックして実行�
 ここまでで、コンポーネントが使えるようになりました。コンフィグレーションは次のセクションを
 参照してください。
 
-twitterRTCは ``twitterRTCComp`` を実行（ ``${prefix}/components/bin`` に
+TwitterRTCは ``TwitterRTCComp`` を実行（ ``${prefix}/components/bin`` に
 インストールされます）することでスタンドアローンモードで実行することができます。
-あるいは、 ``libtwitterRTC.so`` を初期化関数の ``twitterRTCInit`` を利用して、
+あるいは、 ``libTwitterRTC.so`` を初期化関数の ``TwitterRTCInit`` を利用して、
 マネージャにロードすることができます。このライブラリは ``${prefix}/components/lib`` 
 または ``${prefix}/components/lib64`` にインストールされます。
 
@@ -113,7 +113,7 @@ twitterRTCは ``twitterRTCComp`` を実行（ ``${prefix}/components/bin`` に
 例
 ==
 
-例のrtc.confファイルは ``${prefix}/components/share/twitterRTC/examples/conf/``
+例のrtc.confファイルは ``${prefix}/components/share/TwitterRTC/examples/conf/``
 フォルダにインストールされています。
 
 Changelog
