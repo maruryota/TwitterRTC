@@ -1,3 +1,4 @@
 config.py
 *.log
 twitter_action/__pycache__
+__pycache__
