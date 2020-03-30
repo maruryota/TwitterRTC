@@ -3,7 +3,7 @@
 # -*- Python -*-
 
 """
- @file twitterRTC.py
+ @file TwitterRTC.py
  @brief ModuleDescription
  @date $Date$
 
@@ -36,8 +36,8 @@ from requests_oauthlib import OAuth1Session #OAuthのライブラリの読み込
 
 # This module's spesification
 # <rtc-template block="module_spec">
-twitterrtc_spec = ["implementation_id", "twitterRTC", 
-		 "type_name",         "twitterRTC", 
+TwitterRTC_spec = ["implementation_id", "TwitterRTC", 
+		 "type_name",         "TwitterRTC", 
 		 "description",       "ModuleDescription", 
 		 "version",           "1.0.0", 
 		 "vendor",            "maruryota", 
@@ -50,11 +50,12 @@ twitterrtc_spec = ["implementation_id", "twitterRTC",
 # </rtc-template>
 
 ##
-# @class twitterRTC
+# @class TwitterRTC
+# @class TwitterRTC
 # @brief ModuleDescription
 # 
 # 
-class twitterRTC(OpenRTM_aist.DataFlowComponentBase):
+class TwitterRTC(OpenRTM_aist.DataFlowComponentBase):
 	
 	##
 	# @brief constructor
@@ -283,17 +284,17 @@ class twitterRTC(OpenRTM_aist.DataFlowComponentBase):
 
 
 
-def twitterRTCInit(manager):
-    profile = OpenRTM_aist.Properties(defaults_str=twitterrtc_spec)
+def TwitterRTCInit(manager):
+    profile = OpenRTM_aist.Properties(defaults_str=TwitterRTC_spec)
     manager.registerFactory(profile,
-                            twitterRTC,
+                            TwitterRTC,
                             OpenRTM_aist.Delete)
 
 def MyModuleInit(manager):
-    twitterRTCInit(manager)
+    TwitterRTCInit(manager)
 
     # Create a component
-    comp = manager.createComponent("twitterRTC")
+    comp = manager.createComponent("TwitterRTC")
 
 def main():
 	mgr = OpenRTM_aist.Manager.init(sys.argv)

@@ -6,10 +6,10 @@ if(POLICY CMP0053)
   cmake_policy(SET CMP0053 OLD)
 endif()
 
-project(twitterRTC)
+project(TwitterRTC)
 string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 include("${PROJECT_SOURCE_DIR}/cmake/utils.cmake")
-set(PROJECT_VERSION 1.0.0 CACHE STRING "twitterRTC version")
+set(PROJECT_VERSION 1.0.0 CACHE STRING "TwitterRTC version")
 set(UPGRADE_GUID "")
 DISSECT_VERSION()
 set(PROJECT_SHORT_VER ${PROJECT_VERSION_MAJOR}${PROJECT_VERSION_MINOR}${PROJECT_VERSION_REVISION})
@@ -79,11 +79,11 @@ option(BUILD_DOCUMENTATION "Build the documentation" OFF)
 
 
 set(EXEC_FILES ""
-               twitterRTC.py
+               TwitterRTC.py
 )
 
 set(OTHER_SRCS CMakeLists.txt
-               RTC.xml twitterRTC.conf rtc.conf)
+               RTC.xml TwitterRTC.conf rtc.conf)
 
 # check python installed
 find_package(PythonInterp)
