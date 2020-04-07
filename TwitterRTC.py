@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # -*- Python -*-
 
@@ -66,8 +66,9 @@ class TwitterRTC(OpenRTM_aist.DataFlowComponentBase):
 
 		self.url = "https://api.twitter.com/1.1/statuses/update.json"
 
-		tweet_arg = [None] * int((len(RTC._d_TimedString) - 4) / 2)
-		self._d_tweet = RTC.TimedString(*tweet_arg)
+		#tweet_arg = [None] * int((len(RTC._d_TimedString) - 4) / 2)
+		#self._d_tweet = RTC.TimedString(*tweet_arg)
+                self._d_tweet = RTC.TimedString(RTC.Time(0,0), "")
 		"""
 		"""
 		self._tweetIn = OpenRTM_aist.InPort("tweet", self._d_tweet)
