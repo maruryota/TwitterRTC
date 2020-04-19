@@ -68,10 +68,12 @@ class TwitterRTC(OpenRTM_aist.DataFlowComponentBase):
 
 		#tweet_arg = [None] * int((len(RTC._d_TimedString) - 4) / 2)
 		#self._d_tweet = RTC.TimedString(*tweet_arg)
-                self._d_tweet = RTC.TimedString(RTC.Time(0,0), "")
+		self._d_tweet = OpenRTM_aist.instantiateDataType(RTC.TimedString)
 		"""
 		"""
 		self._tweetIn = OpenRTM_aist.InPort("tweet", self._d_tweet)
+		#self._d_tweet = RTC.TimedString(RTC.Time(0,0), "")
+		#self._tweetIn = OpenRTM_aist.InPort("tweet", self._d_tweet)
 
 		
 
@@ -193,7 +195,7 @@ class TwitterRTC(OpenRTM_aist.DataFlowComponentBase):
 	def onExecute(self, ec_id):
 		if self._tweetIn.isNew():
 			data = self._tweetIn.read()
-			post(self.url, self.twitter, data.data)
+			post_tweet(self.url, self.twitter, data.data)
 		
 	
 		return RTC.RTC_OK
